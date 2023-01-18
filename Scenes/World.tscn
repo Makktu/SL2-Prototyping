@@ -14,3 +14,8 @@ color = Color( 0.0980392, 0.0901961, 0.0901961, 1 )
 position = Vector2( 344, 544 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+
+[node name="PulseTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="PulseTimer" to="Lander" method="_on_PulseTimer_timeout"]

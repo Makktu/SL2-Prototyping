@@ -4,7 +4,7 @@ var move_speed = 5
 var energy_level = 50
 
 func _ready():
-	pass
+	$"../PulseTimer".start()
 	
 func _physics_process(delta):
 	get_input()
@@ -20,4 +20,14 @@ func get_input():
 		position.y += move_speed
 		
 	if Input.is_action_pressed("ui_select"):
-		print("pulse fired!")
+		if energy_level >= 20:
+			print("pulse fired!")
+			energy_level -= 20
+		else:
+			print("pulse energy too low!")
+
+
+func _on_PulseTimer_timeout() -> void:
+	if energy_level <= 98:
+		energy_level += 2
+	print(energy_level)
