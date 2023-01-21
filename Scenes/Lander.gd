@@ -6,7 +6,7 @@ var energy_level = 50
 var game_over = false
 
 var thruster_speed = 500
-var constant_speed = 10
+var constant_speed = 200
 
 var x_input_dir = 0
 var y_input_dir = 0
@@ -43,32 +43,27 @@ func get_input():
 		
 	if Input.is_action_pressed("ui_left"):
 		speed += constant_speed
-		if speed > max_speed:
-			speed = max_speed
 		x_input_dir += thruster_speed
 		if x_input_dir >= max_speed:
 			x_input_dir = max_speed
 	if Input.is_action_pressed("ui_right"):
 		speed += constant_speed
-		if speed > max_speed:
-			speed = max_speed
 		x_input_dir -= thruster_speed
 		if x_input_dir >= max_speed:
 			x_input_dir = max_speed
 	if Input.is_action_pressed("ui_up"):
 		speed += constant_speed
-		if speed > max_speed:
-			speed = max_speed
 		y_input_dir += thruster_speed
 		if y_input_dir >= max_speed:
 			y_input_dir = max_speed
 	if Input.is_action_pressed("ui_down"):
 		speed += constant_speed
-		if speed > max_speed:
-			speed = max_speed
 		y_input_dir -= thruster_speed
 		if y_input_dir >= max_speed:
 			y_input_dir = max_speed
+			
+	if speed > max_speed:
+		speed = max_speed
 		
 	if x_input_dir != 0 or y_input_dir != 0:
 		# accelerate when there's input
