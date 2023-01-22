@@ -44,6 +44,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 2, 2 )
+smoothing_enabled = true
 
 [node name="PulseTimer" type="Timer" parent="."]
 wait_time = 2.0
