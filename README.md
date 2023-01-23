@@ -9,3 +9,11 @@ Started to develop SpaceLander2 ('SL2' from now on). Still at the very early sta
 - Set up the playing canvas
 - Added the Godot sprite as a placeholder
 - Added basic movement
+
+### 23 January 2023
+
+Added a few concept art screenshots for the ship to fly around in while I work on the movement code. Generic sci-fi track from the Internet.
+
+- Refined the movement code – now something close to a starting point for developing the game around it. Another 20% or so to go here.
+- Added a big concept art piece – an AI art-generated sci-fi skyscraper. Just to set the mood and see how it works out. Answer: on a mobile screen, not very well. Would have to use lots of dynamic camera zoom-out for there to be any point at all in having broad-scale visuals. Maybe worth a one-off or two.
+- Added a proper SpaceLander sprite – another placeholder really, but better than the OG Lander from SL1.

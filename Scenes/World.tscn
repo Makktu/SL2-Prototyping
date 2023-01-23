@@ -23,7 +23,8 @@ position = Vector2( 291, 1400 )
 texture = ExtResource( 6 )
 
 [node name="Background3" type="Sprite" parent="."]
-position = Vector2( 6692, 5042 )
+position = Vector2( 3678, -3616 )
+rotation = -1.5708
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
