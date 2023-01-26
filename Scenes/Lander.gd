@@ -14,6 +14,9 @@ var velocity = Vector2.ZERO
 var friction = 0.0 # always zero in hard vacuum; can also be dynamically changed in atmosphere, asteroid fields and the like
 var max_speed = 50
 var speed = 0
+
+var thruster_plume_length = 0
+var pulse_fired = false
 # _________________________
 
 func _ready():
@@ -37,6 +40,12 @@ func get_input():
 		
 	x_input_dir = 0
 	y_input_dir = 0
+	
+	if Input.is_action_pressed("ui_select"):
+		if !pulse_fired:
+			$PulserSound.play()
+			pulse_fired = true
+			print("PULSE FIRED")		
 		
 	if Input.is_action_pressed("ui_left"):
 		speed += constant_speed
@@ -54,10 +63,20 @@ func get_input():
 		if y_input_dir >= max_speed:
 			y_input_dir = max_speed
 	if Input.is_action_pressed("ui_down"):
+		$Sprite/Thruster1.visible = true
+#		increase_plume_length()
+		$MainThruster.play()
 		speed += constant_speed
 		y_input_dir -= thruster_speed
 		if y_input_dir >= max_speed:
 			y_input_dir = max_speed
+			
+	if Input.is_action_just_released("ui_down"):
+		$Sprite/Thruster1.visible = false
+#		increase_plume_length()
+#		thruster_plume_length = 0
+		$Sprite/Thruster1.scale.y = 1.8
+		$MainThruster.stop()
 			
 	if speed > max_speed:
 		speed = max_speed
@@ -87,3 +106,8 @@ func _on_PulseTimer_timeout() -> void:
 	if energy_level <= 98:
 		energy_level += 2
 	print(energy_level)
+	
+func increase_plume_length():
+	if $Sprite/Thruster1.scale.y > 5:
+		return
+	$Sprite/Thruster1.scale.y += 0.01

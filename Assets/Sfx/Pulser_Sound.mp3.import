@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pulser_Sound.mp3-48a95b3fba12319f9d83b2557e4af2ae.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/Pulser_Sound.mp3"
+dest_files=[ "res://.import/Pulser_Sound.mp3-48a95b3fba12319f9d83b2557e4af2ae.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
