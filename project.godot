@@ -11,8 +11,7 @@ config_version=4
 [application]
 
 config/name="SL2-Prototyping"
-run/main_scene="res://Scenes/World.tscn"
-config/icon="res://Assets/icon.png"
+run/main_scene="res://Scenes/StartScreen.tscn"
 
 [display]
 
