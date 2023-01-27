@@ -63,7 +63,8 @@ func get_input():
 		if y_input_dir >= max_speed:
 			y_input_dir = max_speed
 	if Input.is_action_pressed("ui_down"):
-		$Sprite/Thruster1.visible = true
+		$Sprite/MainThruster.visible = true
+		$Sprite/MainThruster.playing = true
 #		increase_plume_length()
 		$MainThruster.play()
 		speed += constant_speed
@@ -72,10 +73,10 @@ func get_input():
 			y_input_dir = max_speed
 			
 	if Input.is_action_just_released("ui_down"):
-		$Sprite/Thruster1.visible = false
+		$Sprite/MainThruster.visible = false
+		$Sprite/MainThruster.playing = false
 #		increase_plume_length()
 #		thruster_plume_length = 0
-		$Sprite/Thruster1.scale.y = 1.8
 		$MainThruster.stop()
 			
 	if speed > max_speed:

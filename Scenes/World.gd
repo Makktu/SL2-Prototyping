@@ -2,11 +2,11 @@ extends Node2D
 
 
 func _ready():
-	$AudioStreamPlayer.play()
+	$BG_Music.play()
 	
 
 func set_alarm():
-	$AudioStreamPlayer.stop()
+	$BG_Music.stop()
 	$AlarmSound/AlarmSignal.play()
 
 

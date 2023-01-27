@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/loop_a1.mp3-c387ee56a3468fb205e23a6b1e9b7a9b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Graphics/Animations/Main_Thruster_Animation_1/loop_a1.mp3"
+dest_files=[ "res://.import/loop_a1.mp3-c387ee56a3468fb205e23a6b1e9b7a9b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
