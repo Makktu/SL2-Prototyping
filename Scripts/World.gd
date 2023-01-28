@@ -13,3 +13,7 @@ func set_alarm():
 func _on_AlarmTrigger_body_entered(body):
 	print("Entered?")
 	set_alarm()
+
+
+func _on_Area2D_body_entered(body):
+	print("crash!")

@@ -66,7 +66,7 @@ func get_input():
 		$Sprite/MainThruster.visible = true
 		$Sprite/MainThruster.playing = true
 #		increase_plume_length()
-		$MainThruster.play()
+#		$MainThruster.play()
 		speed += constant_speed
 		y_input_dir -= thruster_speed
 		if y_input_dir >= max_speed:
@@ -77,7 +77,7 @@ func get_input():
 		$Sprite/MainThruster.playing = false
 #		increase_plume_length()
 #		thruster_plume_length = 0
-		$MainThruster.stop()
+#		$MainThruster.stop()
 			
 	if speed > max_speed:
 		speed = max_speed
