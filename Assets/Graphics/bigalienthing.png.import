@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SL2-Concept_Art_1-FILLED.png-83dbcbfc3adb056f6d828d7295a84e34.stex"
+path="res://.import/bigalienthing.png-263e033dab3225fbe40ed4edd10437ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ConceptArt_ALPHA/SL2-Concept_Art_1-FILLED.png"
-dest_files=[ "res://.import/SL2-Concept_Art_1-FILLED.png-83dbcbfc3adb056f6d828d7295a84e34.stex" ]
+source_file="res://Assets/Graphics/bigalienthing.png"
+dest_files=[ "res://.import/bigalienthing.png-263e033dab3225fbe40ed4edd10437ae.stex" ]
 
 [params]
 

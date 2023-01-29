@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SL2-Alpha_Concept_Art_1.png-44120ae6918c72ed794b805e9118fcbc.stex"
+path="res://.import/parallax_starfield_dark.png-a7cac77ee7f4375f53b12759ada29cbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ConceptArt_ALPHA/SL2-Alpha_Concept_Art_1.png"
-dest_files=[ "res://.import/SL2-Alpha_Concept_Art_1.png-44120ae6918c72ed794b805e9118fcbc.stex" ]
+source_file="res://Assets/Graphics/parallax_starfield_dark.png"
+dest_files=[ "res://.import/parallax_starfield_dark.png-a7cac77ee7f4375f53b12759ada29cbe.stex" ]
 
 [params]
 
