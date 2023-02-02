@@ -69,7 +69,7 @@ z_index = -50
 texture = ExtResource( 9 )
 
 [node name="NewBG3" type="Sprite" parent="."]
-modulate = Color( 0.0352941, 0.270588, 0.0313726, 1 )
+modulate = Color( 0.984314, 0.443137, 0.0509804, 1 )
 position = Vector2( 3961, 993 )
 scale = Vector2( 3, 1.5 )
 texture = ExtResource( 10 )
