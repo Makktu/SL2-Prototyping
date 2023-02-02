@@ -19,8 +19,8 @@ var thruster_plume_length = 0
 var pulse_fired = false
 # _________________________
 
-func _ready():
-	$"../PulseTimer".start()
+#func _ready():
+#	$"../PulseTimer".start()
 	
 func _physics_process(delta):
 	get_input()

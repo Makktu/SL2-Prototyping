@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Graphics/layer0_att2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/Starfield7_2.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/FarBackground2.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Graphics/placeholder_sun.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -60,3 +61,21 @@ centered = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/FarBackground2"]
 anims/RESET = SubResource( 1 )
 anims/throbbing_stars = SubResource( 2 )
+
+[node name="FarBackground3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+
+[node name="Sun" type="Sprite" parent="ParallaxBackground/FarBackground3"]
+position = Vector2( 757, 303 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+
+[node name="FarBackground4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="Sun" type="Sprite" parent="ParallaxBackground/FarBackground4"]
+modulate = Color( 0.0313726, 0.87451, 0.988235, 1 )
+self_modulate = Color( 0.87451, 1, 0, 1 )
+position = Vector2( 1400, -19 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
