@@ -50,43 +50,92 @@ func get_input():
 			pulse_fired = true
 			print("PULSE FIRED")		
 		
+	# LEFT____________________________________
 	if Input.is_action_pressed("ui_left"):
+		$Sprite/LeftThruster.visible = true
+		if !$MainThruster.playing:
+			$MainThruster.play()
+		if !middle_on:
+			$Sprite/LeftThruster.playing = true
+		if pressed_down > 5 and !middle_on:
+			$Sprite/LeftThruster.stop()
+			$Sprite/LeftThruster.play("top_middle")
+			middle_on = true
 		speed += constant_speed
 		x_input_dir += thruster_speed
 		if x_input_dir >= max_speed:
 			x_input_dir = max_speed
+		pressed_down += 0.10
+		
+	if Input.is_action_just_released("ui_left"):
+		$MainThruster.stop()
+		$Sprite/LeftThruster.visible = false
+		$Sprite/LeftThruster.playing = false
+		$Sprite/LeftThruster.set_frame(0)
+		pressed_down = 0
+		middle_on = false
+	
+	# RIGHT____________________________________
 	if Input.is_action_pressed("ui_right"):
+		$Sprite/RightThruster.visible = true
+		if !$MainThruster.playing:
+			$MainThruster.play()
+		if !middle_on:
+			$Sprite/RightThruster.playing = true
+		if pressed_down > 5 and !middle_on:
+			$Sprite/RightThruster.stop()
+			$Sprite/RightThruster.play("top_middle")
+			middle_on = true
 		speed += constant_speed
 		x_input_dir -= thruster_speed
 		if x_input_dir >= max_speed:
 			x_input_dir = max_speed
+		pressed_down += 0.10
+		
+	if Input.is_action_just_released("ui_right"):
+		$MainThruster.stop()
+		$Sprite/RightThruster.visible = false
+		$Sprite/RightThruster.playing = false
+		$Sprite/RightThruster.set_frame(0)
+		pressed_down = 0
+		middle_on = false
 			
 	# UP____________________________________
 	if Input.is_action_pressed("ui_up"):
 		$Sprite/TopThruster.visible = true
-		$Sprite/TopThruster.playing = true
+		if !$MainThruster.playing:
+			$MainThruster.play()
+		if !middle_on:
+			$Sprite/TopThruster.playing = true
+		if pressed_down > 5 and !middle_on:
+			$Sprite/TopThruster.stop()
+			$Sprite/TopThruster.play("top_middle")
+			middle_on = true		
 		speed += constant_speed
 		y_input_dir += thruster_speed
 		if y_input_dir >= max_speed:
 			y_input_dir = max_speed
+		pressed_down += 0.10
 			
 	if Input.is_action_just_released("ui_up"):
+		$MainThruster.stop()
 		$Sprite/TopThruster.visible = false
 		$Sprite/TopThruster.playing = false
 		$Sprite/TopThruster.set_frame(0)
+		pressed_down = 0
+		middle_on = false
 		
 	# DOWN_____________________________________
 	if Input.is_action_pressed("ui_down"):
-
 		$Sprite/MainThruster.visible = true
-		$Sprite/MainThruster.play("new_main_thruster")
-		if pressed_down > 3 and !middle_on:
+		if !$MainThruster.playing:
+			$MainThruster.play()
+		if !middle_on:
+			$Sprite/MainThruster.play("new_main_thruster")
+		if pressed_down > 5 and !middle_on:
 			$Sprite/MainThruster.stop()
 			$Sprite/MainThruster.play("middle_main")
 			middle_on = true
-
-#		increase_plume_length()
-#		$MainThruster.play()
 		speed += constant_speed
 		y_input_dir -= thruster_speed
 		if y_input_dir >= max_speed:
@@ -94,14 +143,12 @@ func get_input():
 		pressed_down += 0.10
 			
 	if Input.is_action_just_released("ui_down"):
+		$MainThruster.stop()
 		$Sprite/MainThruster.visible = false
 		$Sprite/MainThruster.stop()
 		$Sprite/MainThruster.set_frame(0)
 		pressed_down = 0
 		middle_on = false
-#		increase_plume_length()
-#		thruster_plume_length = 0
-#		$MainThruster.stop()
 			
 	if speed > max_speed:
 		speed = max_speed

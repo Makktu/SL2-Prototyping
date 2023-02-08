@@ -67,5 +67,6 @@ z_index = -50
 texture = ExtResource( 9 )
 
 [node name="NewBG3" type="Sprite" parent="."]
-position = Vector2( 3021, 3374 )
+position = Vector2( 1900, 1953 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
