@@ -25,7 +25,10 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.101961, 0.972549, 0.145098, 1 )
 
-[node name="StartScreen" type="Node2D"]
+[node name="StartScreen" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 3, 3 )
 
 [node name="TitleImage" type="Sprite" parent="."]
 position = Vector2( 357, 631 )
