@@ -144,6 +144,8 @@ func get_input():
 		
 	# DOWN_____________________________________
 	if Input.is_action_pressed("ui_down") || swipe_up:
+		$MainThruster.pitch_scale = 0.6
+		$MainThruster.volume_db = 16
 		$Sprite/MainThruster.visible = true
 		if !$MainThruster.playing:
 			$MainThruster.play()
@@ -160,6 +162,8 @@ func get_input():
 		pressed_down += 0.10
 			
 	if Input.is_action_just_released("ui_down") || swipe_up_released:
+		$MainThruster.pitch_scale = 1
+		$MainThruster.volume_db = 0
 		$MainThruster.stop()
 		$Sprite/MainThruster.visible = false
 		$Sprite/MainThruster.stop()

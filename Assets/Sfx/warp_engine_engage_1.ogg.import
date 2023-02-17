@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/warp_engine_engage_1.ogg-15bd3c2f7d75e3af1d2b5b8527e0e6e2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/warp_engine_engage_1.ogg"
+dest_files=[ "res://.import/warp_engine_engage_1.ogg-15bd3c2f7d75e3af1d2b5b8527e0e6e2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

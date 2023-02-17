@@ -78,5 +78,5 @@ motion_scale = Vector2( 0.6, 0.6 )
 
 [node name="Sun" type="Sprite" parent="ParallaxBackground/FarBackground3"]
 position = Vector2( 757, 303 )
-scale = Vector2( 0.6, 0.6 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 4 )
