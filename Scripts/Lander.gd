@@ -230,3 +230,7 @@ func _input(event):
 	if Swipe.on_area == false && swipe_right == true:
 		swipe_right_released = true
 		swipe_right = false	
+
+
+func _on_BG_body_entered(body):
+	print("you dead")

@@ -1,8 +1,8 @@
 extends Node2D
 
 
-#func _ready():
-#	$BG_Music.play()
+func _ready():
+	$BG_Music.play()
 	
 
 func set_alarm():
