@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 # initialise swipe control variables
-onready var Swipe = $Camera2D/SwipeScreenButton
+onready var Swipe = $PlayerCamera/SwipeScreenButton
 var swipe_up = false
 var swipe_down = false
 var swipe_left = false
@@ -36,8 +36,8 @@ var pressed_down = 0
 var middle_on = false
 # _________________________
 
-#func _ready():
-#	$"../PulseTimer".start()
+func _ready():
+	$PlayerCamera.change_zoom()
 	
 func _physics_process(delta):
 	get_input()
@@ -212,7 +212,6 @@ func _input(event):
 			swipe_down = true
 		if Swipe.get_swipe_direction(event.relative, 5) == Vector2.DOWN:
 			swipe_up = true
-			print("SWIPED!")
 		if Swipe.get_swipe_direction(event.relative, 5) == Vector2.LEFT:
 			swipe_right = true
 		if Swipe.get_swipe_direction(event.relative, 5) == Vector2.RIGHT:

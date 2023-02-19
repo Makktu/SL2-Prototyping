@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/BG_Music.tscn" type="PackedScene" id=2]
@@ -9,18 +9,19 @@
 [ext_resource path="res://Assets/Graphics/test_2.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Graphics/new_proto_bg.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Graphics/bigalienthing.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Environment_1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Sun.tscn" type="PackedScene" id=16]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -46, -455 )
-b = Vector2( 215, 1421 )
+b = Vector2( 210, 1445 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 377, 46 )
+position = Vector2( 398, 327 )
 
 [node name="PulseTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -71,6 +72,8 @@ z_index = -50
 texture = ExtResource( 9 )
 
 [node name="BG" type="Area2D" parent="."]
+visible = false
+position = Vector2( 124, -445 )
 
 [node name="NewBG3" type="Sprite" parent="BG"]
 position = Vector2( 1843, 2535 )
@@ -79,8 +82,11 @@ z_index = 50
 texture = ExtResource( 8 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="BG"]
-position = Vector2( 0, -1 )
+position = Vector2( 9, -4 )
 z_index = 300
 shape = SubResource( 1 )
+
+[node name="Environment_1" parent="." instance=ExtResource( 10 )]
+position = Vector2( 662, -590 )
 
 [connection signal="body_entered" from="BG" to="Player" method="_on_BG_body_entered"]
