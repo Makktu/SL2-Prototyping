@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Herrmann.ogg-faa76bbbdf3c1fb161b132ac277d6a67.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Herrmann.ogg"
+dest_files=[ "res://.import/Herrmann.ogg-faa76bbbdf3c1fb161b132ac277d6a67.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

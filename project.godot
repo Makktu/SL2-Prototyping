@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="SL2-Prototyping"
 run/main_scene="res://Scenes/StartScreen.tscn"
 
+[autoload]
+
+Global="*res://Scenes/Global.tscn"
+
 [display]
 
 window/size/width=720

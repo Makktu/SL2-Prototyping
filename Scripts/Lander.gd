@@ -36,8 +36,9 @@ var pressed_down = 0
 var middle_on = false
 # _________________________
 
-func _ready():
-	$PlayerCamera.change_zoom()
+#func _ready():
+# note to self: this Timer is related to the camera zoom controller to be created eventually
+#	$Timer.start()
 	
 func _physics_process(delta):
 	get_input()
@@ -232,4 +233,9 @@ func _input(event):
 
 
 func _on_BG_body_entered(body):
-	print("you dead")
+	if velocity.x:
+		velocity.x = -velocity.x
+	if velocity.y:
+		velocity.y = -velocity.y
+	$"/root/Global".taking_damage = true
+	$Collision.play()
