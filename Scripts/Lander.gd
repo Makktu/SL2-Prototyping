@@ -206,8 +206,7 @@ func get_input():
 func _on_PulseTimer_timeout() -> void:
 	if energy_level <= 98:
 		energy_level += 2
-	print(energy_level)
-	
+
 func increase_plume_length():
 	if $Sprite/Thruster1.scale.y > 5:
 		return
@@ -239,8 +238,6 @@ func _input(event):
 
 
 func _on_BG_body_entered(body):
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
 	if velocity.x:
 		velocity.x = -velocity.x / 2
 	if velocity.y:
