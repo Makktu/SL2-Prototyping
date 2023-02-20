@@ -39,6 +39,12 @@ var middle_on = false
 #func _ready():
 # note to self: this Timer is related to the camera zoom controller to be created eventually
 #	$Timer.start()
+
+func camera_shake(shake_amount):
+	$PlayerCamera.set_offset(Vector2( \
+		rand_range(-3.0, 3.0) * shake_amount, \
+		rand_range(-3.0, 3.0) * shake_amount \
+	))
 	
 func _physics_process(delta):
 	get_input()
@@ -233,9 +239,13 @@ func _input(event):
 
 
 func _on_BG_body_entered(body):
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
 	if velocity.x:
-		velocity.x = -velocity.x
+		velocity.x = -velocity.x / 2
 	if velocity.y:
-		velocity.y = -velocity.y
+		velocity.y = -velocity.y / 2
 	$"/root/Global".taking_damage = true
 	$Collision.play()
+	for n in 100:
+		camera_shake(1)
