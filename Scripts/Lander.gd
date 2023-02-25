@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 # initialise swipe control variables
 onready var Swipe = $PlayerCamera/SwipeScreenButton
 var swipe_up = false
@@ -66,10 +65,14 @@ func get_input():
 	y_input_dir = 0
 	
 	if Input.is_action_pressed("ui_select"):
-		if !pulse_fired:
-			$PulserSound.play()
-			pulse_fired = true
-			print("PULSE FIRED")		
+		$PulserSound.play()
+		$Sprite/EnergyPulse.frame = 0
+		$Sprite/EnergyPulse.visible = true
+		$Sprite/EnergyPulse.play("energy_pulse");
+
+
+
+
 		
 	# LEFT____________________________________
 	if Input.is_action_pressed("ui_left") || swipe_right:
@@ -195,12 +198,7 @@ func get_input():
 		
 	velocity.normalized()
 		
-	if Input.is_action_pressed("ui_select"):
-		if energy_level >= 20:
-			print("pulse fired!")
-			energy_level -= 20
-		else:
-			print("pulse energy too low!")
+
 
 
 func _on_PulseTimer_timeout() -> void:
@@ -246,3 +244,8 @@ func _on_BG_body_entered(body):
 	$Collision.play()
 	for n in 100:
 		camera_shake(1)
+
+
+func _on_EnergyPulse_animation_finished():
+	$Sprite/EnergyPulse.visible = false;
+

@@ -21,3 +21,9 @@ Added a few concept art screenshots for the ship to fly around in while I work o
 ### 19 February 2023
 
 Resumed close work on this. Added collision polygon to the prototype map. Added collision damage flash. This is still just a prototype.
+
+### 25 February 2023
+
+Added 'energy pulse' animation. Nothing for it to do currently without on-screen enemies yet.
+
+Trying to change environment. Backgrounds currently don't work aesthetically.
