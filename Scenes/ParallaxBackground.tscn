@@ -68,7 +68,7 @@ motion_scale = Vector2( 0.4, 0.4 )
 
 [node name="Sun" type="Sprite" parent="ParallaxBackground/FarBackground4"]
 modulate = Color( 0.537255, 0.788235, 0.368627, 1 )
-position = Vector2( 1127, 49 )
+position = Vector2( 593, 384 )
 rotation = -5.8797
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 5 )
@@ -77,6 +77,6 @@ texture = ExtResource( 5 )
 motion_scale = Vector2( 0.6, 0.6 )
 
 [node name="Sun" type="Sprite" parent="ParallaxBackground/FarBackground3"]
-position = Vector2( 757, 303 )
+position = Vector2( 63.0001, 181 )
 scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 4 )

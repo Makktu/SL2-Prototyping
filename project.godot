@@ -26,6 +26,7 @@ run/main_scene="res://Scenes/StartScreen.tscn"
 [autoload]
 
 Global="*res://Scenes/Global.tscn"
+Player="*res://Scenes/Player.tscn"
 
 [display]
 
