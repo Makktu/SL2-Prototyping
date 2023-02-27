@@ -14,4 +14,7 @@ script = ExtResource( 1 )
 position = Vector2( 10, 635.5 )
 shape = SubResource( 1 )
 
+[node name="SpawnTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

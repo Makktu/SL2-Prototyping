@@ -14,6 +14,13 @@ func _ready():
 
 func get_player():
 	return the_player	
+	
+func basic():
+	$Basic.play()
+	
+func under_threat():
+	$Basic.volume_db = -20
+	$Threat.play()
 
 	
 

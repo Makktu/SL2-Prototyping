@@ -1,18 +1,20 @@
 extends KinematicBody2D
 
-var speed = 200
-onready var the_player = $"/root/Player"
+var speed = 80
 
+var target_position
+
+onready var the_player = get_tree().get_nodes_in_group("player")[0]
 
 
 func _ready():
 	$AnimatedSprite.play("default")
 	$AnimationPlayer.play("enemy_throb")
-	print(the_player)
 	_physics_process(true)
+
 	
 func _physics_process(delta):
-	var direction = (the_player.position - position).normalized()
-	move_and_slide(direction * speed)
+	target_position = (the_player.global_position - global_position).normalized()
+	move_and_slide(target_position * speed)
 	
 	
