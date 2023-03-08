@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Graphics/env_2.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Environment_1.gd" type="Script" id=2]
+
+[node name="Environment_1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3988, 2496 )
+texture = ExtResource( 1 )
