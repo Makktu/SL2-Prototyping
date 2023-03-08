@@ -38,8 +38,8 @@ tracks/0/keys = {
 }
 
 [node name="Environment_0" type="Node2D"]
-position = Vector2( 138, 317 )
-scale = Vector2( 0.35, 0.35 )
+position = Vector2( -100, 350 )
+scale = Vector2( 0.6, 0.6 )
 script = ExtResource( 3 )
 
 [node name="BG" type="Area2D" parent="."]

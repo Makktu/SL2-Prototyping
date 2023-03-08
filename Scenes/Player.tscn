@@ -141,6 +141,7 @@ frames = SubResource( 5 )
 animation = "top_middle"
 
 [node name="EnergyPulse" type="AnimatedSprite" parent="Sprite"]
+visible = false
 position = Vector2( 28, 48 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )

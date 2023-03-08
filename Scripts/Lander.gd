@@ -11,6 +11,8 @@ var swipe_down_released = false
 var swipe_up_released = false
 var swipe_left_released = false
 var swipe_right_released = false
+
+var tap_once = false
 #####################################
 
 var move_speed = 5
@@ -34,10 +36,6 @@ var pulse_fired = false
 var pressed_down = 0
 var middle_on = false
 # _________________________
-
-#func _ready():
-# note to self: this Timer is related to the camera zoom controller to be created eventually
-#	$Timer.start()
 
 func camera_shake(shake_amount):
 	$PlayerCamera.set_offset(Vector2( \
@@ -70,10 +68,6 @@ func get_input():
 		$Sprite/EnergyPulse.visible = true
 		$Sprite/EnergyPulse.play("energy_pulse");
 
-
-
-
-		
 	# LEFT____________________________________
 	if Input.is_action_pressed("ui_left") || swipe_right:
 		$Sprite/LeftThruster.visible = true
@@ -199,8 +193,6 @@ func get_input():
 	velocity.normalized()
 		
 
-
-
 func _on_PulseTimer_timeout() -> void:
 	if energy_level <= 98:
 		energy_level += 2
@@ -249,3 +241,7 @@ func _on_BG_body_entered(body):
 func _on_EnergyPulse_animation_finished():
 	$Sprite/EnergyPulse.visible = false;
 
+
+func _on_TapTimer_timeout():
+	if tap_once:
+		tap_once = false

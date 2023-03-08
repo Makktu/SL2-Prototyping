@@ -26,7 +26,6 @@ func get_swipe_direction(swipe, swipe_margin):
 		return swipe_direction
 		
 func _on_self_pressed():
-	print("TOUCHING")
 	on_area = true
 	
 func _on_self_released():
