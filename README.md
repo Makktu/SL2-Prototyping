@@ -27,3 +27,7 @@ Resumed close work on this. Added collision polygon to the prototype map. Added 
 Added 'energy pulse' animation. Nothing for it to do currently without on-screen enemies yet.
 
 Trying to change environment. Backgrounds currently don't work aesthetically.
+
+### 27 March 2023
+
+After long away, back on this with a new enthusiasm. Progress being made on the most tricky part of the project: my own custom environments. Currently adopted Draw.io as the method of making them.
