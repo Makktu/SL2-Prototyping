@@ -85,4 +85,3 @@ scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 4 )
 
 [node name="NewSun" parent="ParallaxBackground/FarBackground3" instance=ExtResource( 6 )]
-visible = false
