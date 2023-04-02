@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Graphics/ENV_NEW2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/Sat1-4-23-env1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Environment_1.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/FirstEnemySpawner.tscn" type="PackedScene" id=3]
 
@@ -10,12 +10,12 @@ scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 6723.33, 2790 )
-scale = Vector2( 2, 2 )
+modulate = Color( 0.537255, 0.419608, 0.419608, 1 )
+position = Vector2( 7406.67, 2050 )
+scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 1 )
 
 [node name="FirstEnemySpawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5596.67, 2060 )
-scale = Vector2( 1, 1.26667 )
+position = Vector2( 5850, 1590 )
 
 [connection signal="body_entered" from="." to="." method="_on_Environment_1_body_entered"]

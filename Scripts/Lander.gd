@@ -24,7 +24,7 @@ var x_input_dir = 0
 var y_input_dir = 0
 # _____GLOBAL PHYSICS VALUES:
 var acceleration = 1 # Dictates the handling of the Lander - the higher the value, the lighter the ship
-var gravity = 20 # Will always be 0 in zero-g; can be dynamically changed for 'gravity well' zones
+var gravity = 29 # Will always be 0 in zero-g; can be dynamically changed for 'gravity well' zones
 var velocity = Vector2.ZERO
 var friction = 0.0 # always zero in hard vacuum; can also be dynamically changed in atmosphere, asteroid fields and the like
 var max_speed = 50
