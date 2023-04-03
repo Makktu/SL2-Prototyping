@@ -9,6 +9,7 @@ onready var the_player = get_tree().get_nodes_in_group("player")[0]
 func _ready():
 	$AnimatedSprite.play("default")
 	$AnimationPlayer.play("enemy_throb")
+	$"/root/Global".enemies_chasing_player += 1
 	_physics_process(true)
 	
 func _physics_process(delta):
@@ -21,4 +22,6 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		$"/root/Global".taking_damage = true
+		$"/root/Global".enemies_chasing_player -= 1
 		queue_free()
+		

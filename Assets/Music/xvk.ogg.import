@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/xvk.ogg-aae89e97d8bf98f3f21856a54a70ee20.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/xvk.ogg"
+dest_files=[ "res://.import/xvk.ogg-aae89e97d8bf98f3f21856a54a70ee20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

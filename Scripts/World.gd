@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-#	$BG_Music.play()
 	world_controller()
 	
 func world_controller():
