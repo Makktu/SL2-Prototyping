@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/FirstEnemySpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Graphics/NewEnv1-2.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Environment_3.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Environment_3.gd" type="Script" id=3]
 
 [node name="Environment_3" type="Area2D"]
 script = ExtResource( 3 )
