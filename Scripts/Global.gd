@@ -11,10 +11,10 @@ onready var the_player = "res://Scenes/Player.tscn"
 var enemies_chasing_player = 0
 var enemies_active = false
 #var current_music_position
-
+var platform = OS.get_name()
 
 func _ready():
-	pass
+	print(platform)
 
 func get_player():
 	return the_player	

@@ -61,12 +61,16 @@ func get_input():
 		
 	x_input_dir = 0
 	y_input_dir = 0
-	
-	if Input.is_action_pressed("ui_select"):
+
+#	if $"/root/Global".platform != "OSX" && $"/root/Global".platform != "Windows":
+	if Input.is_action_just_pressed("ui_select") && !tap_once:
+		tap_once = true
+	if Input.is_action_just_pressed("ui_select") && tap_once:
 		$PulserSound.play()
 		$Sprite/EnergyPulse.frame = 0
 		$Sprite/EnergyPulse.visible = true
 		$Sprite/EnergyPulse.play("energy_pulse");
+		tap_once = false
 
 	# LEFT____________________________________
 	if Input.is_action_pressed("ui_left") || swipe_right:
@@ -203,6 +207,7 @@ func increase_plume_length():
 	$Sprite/Thruster1.scale.y += 0.01
 	
 func _input(event):
+	print(event)
 	if event is InputEventScreenDrag:
 		if Swipe.get_swipe_direction(event.relative, 5) == Vector2.UP:
 			swipe_down = true
