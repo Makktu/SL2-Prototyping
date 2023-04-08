@@ -13,6 +13,9 @@ var enemies_active = false
 #var current_music_position
 var platform = OS.get_name()
 
+var player_energy = 100
+var game_over = false
+
 func _ready():
 	print(platform)
 
@@ -33,11 +36,16 @@ func under_threat():
 
 	
 func _physics_process(delta):
+	if game_over:
+		print("GAME OVER")
+#		get_tree().paused = true	
 	if enemies_chasing_player == 0 && enemies_active:
 		enemies_active = false
 		fade_out($Threat)
 		$Basic.play()
 		fade_in($Basic)
+	if player_energy <= 0:
+		game_over = true
 		
 		
 func fade_out(stream_player):
