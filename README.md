@@ -31,3 +31,7 @@ Trying to change environment. Backgrounds currently don't work aesthetically.
 ### 27 March 2023
 
 After long away, back on this with a new enthusiasm. Progress being made on the most tricky part of the project: my own custom environments. Currently adopted Draw.io as the method of making them.
+
+### 10 April 2023
+
+Back with a bang, and adding proper game features. Energy bar, damage from scenery and enemies, and a proper Game Over screen with restart ability.
