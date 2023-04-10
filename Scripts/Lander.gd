@@ -37,6 +37,9 @@ var pressed_down = 0
 var middle_on = false
 # _________________________
 
+func _ready():
+	$EnergyBar.value = $"/root/Global".player_energy
+
 func camera_shake(shake_amount):
 	$PlayerCamera.set_offset(Vector2( \
 		rand_range(-3.0, 3.0) * shake_amount, \
@@ -54,6 +57,9 @@ func _physics_process(delta):
 	input.x -= float(Input.is_action_pressed('ui_right'))
 	input.y += float(Input.is_action_pressed('ui_up'))
 	input.y -= float(Input.is_action_pressed('ui_down'))	
+	
+	if $"/root/Global".taking_damage:
+		$EnergyBar.value = $"/root/Global".player_energy
 	
 func get_input():
 	if game_over:
@@ -238,9 +244,11 @@ func _on_BG_body_entered(body):
 	if velocity.y:
 		velocity.y = -velocity.y / 2
 	$"/root/Global".taking_damage = true
+	$"/root/Global".player_energy -= 10
+
 	$Collision.play()
-	for n in 100:
-		camera_shake(1)
+#	for n in 100:
+#		camera_shake(1)
 
 
 func _on_EnergyPulse_animation_finished():

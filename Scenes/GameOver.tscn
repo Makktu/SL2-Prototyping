@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Fonts/Stardate81316-aolE.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/GameOver.gd" type="Script" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0313726, 0.0313726, 0.0196078, 1 )
+
+[node name="GameOver" type="Node2D"]
+visible = false
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.215686 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameOverMsg" type="RichTextLabel" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 172.0
+margin_top = -48.0
+margin_right = 972.0
+margin_bottom = 152.0
+theme = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Game Over"
+
+[node name="Restart" type="Button" parent="CanvasLayer"]
+margin_left = 168.0
+margin_top = 748.0
+margin_right = 568.0
+margin_bottom = 898.0
+custom_colors/font_color = Color( 0.101961, 0.972549, 0.145098, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer"]
+margin_left = 166.0
+margin_top = 946.0
+margin_right = 566.0
+margin_bottom = 1096.0
+custom_colors/font_color = Color( 0.101961, 0.972549, 0.145098, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Main Menu"
+
+[connection signal="pressed" from="CanvasLayer/MainMenu" to="." method="_on_MainMenu_pressed"]

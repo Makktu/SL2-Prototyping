@@ -38,7 +38,8 @@ func under_threat():
 func _physics_process(delta):
 	if game_over:
 		print("GAME OVER")
-#		get_tree().paused = true	
+		get_tree().paused = true	
+		$GameOver.visible = true
 	if enemies_chasing_player == 0 && enemies_active:
 		enemies_active = false
 		fade_out($Threat)
