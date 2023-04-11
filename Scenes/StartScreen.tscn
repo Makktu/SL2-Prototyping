@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Fonts/Stardate81316-aolE.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Graphics/TitleImageCandidate1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/StartButton.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/StartScreen.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 100
@@ -30,15 +30,16 @@ bg_color = Color( 0.101961, 0.972549, 0.145098, 1 )
 script = ExtResource( 4 )
 
 [node name="TitleImage" type="Sprite" parent="."]
+modulate = Color( 0.462745, 0.486275, 0.0980392, 1 )
 position = Vector2( 361, 642 )
 scale = Vector2( 0.573374, 0.570168 )
 texture = ExtResource( 2 )
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 166.0
-margin_top = 946.0
-margin_right = 566.0
-margin_bottom = 1096.0
+margin_left = 159.0
+margin_top = 890.0
+margin_right = 559.0
+margin_bottom = 1040.0
 custom_colors/font_color = Color( 0.101961, 0.972549, 0.145098, 1 )
 custom_fonts/font = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -46,26 +47,26 @@ text = "START"
 script = ExtResource( 3 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = -66.0
-margin_top = 192.0
-margin_right = 785.0
-margin_bottom = 344.0
+modulate = Color( 0.886405, 0.851444, 0.820361, 1 )
+margin_left = -39.0
+margin_top = 298.0
+margin_right = 812.0
+margin_bottom = 450.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-text = "  SpaceLander 2  "
+text = "  SpaceLander2 "
 
 [node name="AlphaNotice" type="Label" parent="."]
-margin_left = 188.0
-margin_top = 342.0
-margin_right = 488.0
-margin_bottom = 415.0
+margin_left = -22.0
+margin_top = 1208.0
+margin_right = 686.0
+margin_bottom = 1243.0
 rect_scale = Vector2( 1.05468, 1.31663 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "pre-Alpha prototype
-v0.1"
+text = "Alpha v0.2"
 align = 1
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]

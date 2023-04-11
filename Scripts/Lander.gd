@@ -12,8 +12,7 @@ var swipe_up_released = false
 var swipe_left_released = false
 var swipe_right_released = false
 
-var tap_once = false
-#####################################
+var double_tap = false
 
 var move_speed = 2
 var energy_level = 50
@@ -47,6 +46,12 @@ func camera_shake(shake_amount):
 	))
 	
 func _physics_process(delta):
+	# reset tap counter
+#	if tap_counter:
+#		tap_counter += 1
+#		if tap_counter > 5:
+#			tap_counter = 0
+	#
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
@@ -68,15 +73,13 @@ func get_input():
 	x_input_dir = 0
 	y_input_dir = 0
 
-#	if $"/root/Global".platform != "OSX" && $"/root/Global".platform != "Windows":
-	if Input.is_action_just_pressed("ui_select") && !tap_once:
-		tap_once = true
-	if Input.is_action_just_pressed("ui_select") && tap_once:
+	# DOUBLE-TAP ENERGY PULSE________________
+	if double_tap:
 		$PulserSound.play()
 		$Sprite/EnergyPulse.frame = 0
 		$Sprite/EnergyPulse.visible = true
 		$Sprite/EnergyPulse.play("energy_pulse");
-		tap_once = false
+		double_tap = false
 
 	# LEFT____________________________________
 	if Input.is_action_pressed("ui_left") || swipe_right:
@@ -247,14 +250,12 @@ func _on_BG_body_entered(body):
 	$"/root/Global".player_energy -= 10
 
 	$Collision.play()
-#	for n in 100:
-#		camera_shake(1)
 
 
 func _on_EnergyPulse_animation_finished():
 	$Sprite/EnergyPulse.visible = false;
 
 
-func _on_TapTimer_timeout():
-	if tap_once:
-		tap_once = false
+func _on_SwipeScreenButton_double_tap():
+	if !double_tap:
+		double_tap = true

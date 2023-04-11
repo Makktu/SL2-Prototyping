@@ -189,6 +189,10 @@ scale = Vector2( 57.3752, 100.368 )
 shape = SubResource( 6 )
 script = ExtResource( 22 )
 
+[node name="TapTimer" type="Timer" parent="PlayerCamera/SwipeScreenButton"]
+wait_time = 0.6
+one_shot = true
+
 [node name="TakeDamage" type="ColorRect" parent="PlayerCamera"]
 visible = false
 margin_left = -972.0
@@ -214,4 +218,5 @@ stream = ExtResource( 24 )
 volume_db = 5.0
 
 [connection signal="animation_finished" from="Sprite/EnergyPulse" to="." method="_on_EnergyPulse_animation_finished"]
+[connection signal="double_tap" from="PlayerCamera/SwipeScreenButton" to="." method="_on_SwipeScreenButton_double_tap"]
 [connection signal="timeout" from="Timer" to="PlayerCamera" method="_on_Timer_timeout"]

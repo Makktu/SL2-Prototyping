@@ -11,7 +11,13 @@ onready var the_player = "res://Scenes/Player.tscn"
 var enemies_chasing_player = 0
 var enemies_active = false
 var platform = OS.get_name()
-var player_energy = 10
+
+##########################
+# PLAYER STARTING VALUES #
+var starting_energy = 50
+var player_energy = starting_energy
+##########################
+
 var game_over = false
 
 
@@ -40,13 +46,17 @@ func under_threat():
 	
 func _physics_process(delta):		
 	if enemies_chasing_player == 0 && enemies_active:
-		enemies_active = false
-		fade_out($Threat)
-		$Basic.play()
-		fade_in($Basic)
+		enemies_gone()
 	if player_energy <= 0:
-		game_over = true
+		player_energy = starting_energy
 		$GameOver.game_over()
+		
+		
+func enemies_gone():
+	enemies_active = false
+	fade_out($Threat)
+	$Basic.play()
+	fade_in($Basic)
 
 		
 func fade_out(stream_player):
@@ -64,5 +74,6 @@ func _on_Tween_tween_completed(object, key):
 	object.volume_db = 0
 
 	
-func remove_game_over():
-	get_tree().paused = false
+func undo_game_over():
+	$GameOver/CanvasLayer.visible = false
+#	get_tree().paused = false
