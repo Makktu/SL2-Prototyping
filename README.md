@@ -40,3 +40,9 @@ Things to be added in the next few days:
 
 * Make Game Over screen function properly
 * Make Energy Bar fully functional
+
+### 11 April 2023
+
+* Game Over screen now working
+
+* Double-tap energy pulse on mobile added (doesn't do anything to enemies yet, just the technical stuff added)
