@@ -35,3 +35,8 @@ After long away, back on this with a new enthusiasm. Progress being made on the 
 ### 10 April 2023
 
 Back with a bang, and adding proper game features. Energy bar, damage from scenery and enemies, and a proper Game Over screen with restart ability.
+
+Things to be added in the next few days:
+
+* Make Game Over screen function properly
+* Make Energy Bar fully functional

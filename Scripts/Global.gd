@@ -8,12 +8,13 @@ var taking_damage = false
 var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn"]
 var current_environment = 2
 onready var the_player = "res://Scenes/Player.tscn"
+
 var enemies_chasing_player = 0
 var enemies_active = false
-#var current_music_position
+
 var platform = OS.get_name()
 
-var player_energy = 100
+var player_energy = 10
 var game_over = false
 
 func _ready():
@@ -35,11 +36,7 @@ func under_threat():
 	fade_in($Threat)
 
 	
-func _physics_process(delta):
-	if game_over:
-		print("GAME OVER")
-		get_tree().paused = true	
-		$GameOver.visible = true
+func _physics_process(delta):		
 	if enemies_chasing_player == 0 && enemies_active:
 		enemies_active = false
 		fade_out($Threat)
@@ -47,7 +44,17 @@ func _physics_process(delta):
 		fade_in($Basic)
 	if player_energy <= 0:
 		game_over = true
+		make_game_over()
 		
+func make_game_over():
+	get_tree().paused = true
+#	$GameOver.visible = true
+	$GameOver/CanvasLayer.visible = true
+	
+func unmake_game_over():
+	$GameOver/CanvasLayer.visible = false
+
+
 		
 func fade_out(stream_player):
 #	current_music_position = $Basic.get_playback_position()
@@ -63,6 +70,10 @@ func fade_in(stream_player):
 func _on_Tween_tween_completed(object, key):
 	object.stop()
 	object.volume_db = 0
+	
+func remove_game_over():
+#	loaded_game_over.queue_free()
+	get_tree().paused = false
 
 
 #func _on_Tween_In_tween_completed(object, key):
