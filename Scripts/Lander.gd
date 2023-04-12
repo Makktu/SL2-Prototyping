@@ -46,12 +46,6 @@ func camera_shake(shake_amount):
 	))
 	
 func _physics_process(delta):
-	# reset tap counter
-#	if tap_counter:
-#		tap_counter += 1
-#		if tap_counter > 5:
-#			tap_counter = 0
-	#
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
@@ -74,12 +68,13 @@ func get_input():
 	y_input_dir = 0
 
 	# DOUBLE-TAP ENERGY PULSE________________
-	if double_tap:
+	if double_tap or Input.is_action_pressed("ui_select"):
 		$PulserSound.play()
 		$Sprite/EnergyPulse.frame = 0
 		$Sprite/EnergyPulse.visible = true
 		$Sprite/EnergyPulse.play("energy_pulse");
-		double_tap = false
+		if double_tap:
+			double_tap = false
 
 	# LEFT____________________________________
 	if Input.is_action_pressed("ui_left") || swipe_right:

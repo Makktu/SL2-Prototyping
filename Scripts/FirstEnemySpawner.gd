@@ -14,7 +14,7 @@ func _on_Area2D_body_entered(body):
 	
 
 func start_spawning():
-	if amount_spawned >= 50:
+	if amount_spawned >= 5:
 		return
 	amount_spawned += 1
 	var loaded_enemy = basic_enemy.instance()

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 40
+var speed = 90
 
 var target_position
 
