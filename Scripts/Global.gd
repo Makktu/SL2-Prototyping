@@ -12,6 +12,8 @@ var enemies_chasing_player = 0
 var enemies_active = false
 var platform = OS.get_name()
 
+var pulser_fired = false
+
 ##########################
 # PLAYER STARTING VALUES #
 var starting_energy = 50
@@ -76,4 +78,3 @@ func _on_Tween_tween_completed(object, key):
 	
 func undo_game_over():
 	$GameOver/CanvasLayer.visible = false
-#	get_tree().paused = false

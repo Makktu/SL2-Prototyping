@@ -69,10 +69,14 @@ func get_input():
 
 	# DOUBLE-TAP ENERGY PULSE________________
 	if double_tap or Input.is_action_pressed("ui_select"):
+		if $"/root/Global".pulser_fired:
+			return
 		$PulserSound.play()
 		$Sprite/EnergyPulse.frame = 0
 		$Sprite/EnergyPulse.visible = true
 		$Sprite/EnergyPulse.play("energy_pulse");
+		$"/root/Global".pulser_fired = true
+		$Sprite/EnergyPulse/CooldownTimer.start()
 		if double_tap:
 			double_tap = false
 
@@ -254,3 +258,7 @@ func _on_EnergyPulse_animation_finished():
 func _on_SwipeScreenButton_double_tap():
 	if !double_tap:
 		double_tap = true
+
+
+func _on_CooldownTimer_timeout():
+	$"/root/Global".pulser_fired = false
