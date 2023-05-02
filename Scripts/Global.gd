@@ -5,8 +5,12 @@ onready var tween_in = get_node("Tween_In")
 var transition_duration = 5.00
 var transition_type = 1
 var taking_damage = false
-var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn"]
-var current_environment = 2
+
+### starting environment setup ###
+var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_4.tscn"]
+var current_environment = 3
+##################################
+
 onready var the_player = "res://Scenes/Player.tscn"
 var enemies_chasing_player = 0
 var enemies_active = false

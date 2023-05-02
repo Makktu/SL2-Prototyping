@@ -26,10 +26,4 @@ polygon = PoolVector2Array( 5000, 500, 4624, 500, 4624, 495, 4625.6, 495, 4637, 
 [node name="FirstEnemySpawner2" parent="." instance=ExtResource( 1 )]
 position = Vector2( -316, -889 )
 
-[node name="FirstEnemySpawner3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1014, -566 )
-
-[node name="FirstEnemySpawner4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 922, -599 )
-
 [connection signal="body_entered" from="." to="." method="_on_Environment_3_body_entered"]

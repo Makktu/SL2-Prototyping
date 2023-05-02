@@ -67,10 +67,10 @@ anims/throbbing_stars = SubResource( 2 )
 motion_scale = Vector2( 0.4, 0.4 )
 
 [node name="Sun" type="Sprite" parent="ParallaxBackground/FarBackground4"]
-modulate = Color( 0.537255, 0.788235, 0.368627, 1 )
-position = Vector2( 593, 384 )
+modulate = Color( 0.4, 1, 0, 1 )
+position = Vector2( 728, 253 )
 rotation = -5.8797
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="FarBackground3" type="ParallaxLayer" parent="ParallaxBackground"]
