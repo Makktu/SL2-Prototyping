@@ -6,6 +6,8 @@ var transition_duration = 5.00
 var transition_type = 1
 var taking_damage = false
 
+var game_paused = false
+
 ### starting environment setup ###
 var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_4.tscn"]
 var current_environment = 2
@@ -45,9 +47,9 @@ func alt():
 	
 func under_threat():
 	enemies_active = true
-	fade_out($Basic)
-	$Threat.play()
-	fade_in($Threat)
+#	fade_out($Basic)
+#	$Threat.play()
+#	fade_in($Threat)
 
 	
 func _physics_process(delta):		
@@ -63,9 +65,9 @@ func _physics_process(delta):
 		
 func enemies_gone():
 	enemies_active = false
-	fade_out($Threat)
-	$Basic.play()
-	fade_in($Basic)
+#	fade_out($Threat)
+#	$Basic.play()
+#	fade_in($Basic)
 
 		
 func fade_out(stream_player):

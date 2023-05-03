@@ -216,7 +216,6 @@ func increase_plume_length():
 	$Sprite/Thruster1.scale.y += 0.01
 	
 func _input(event):
-	print(event)
 	if event is InputEventScreenDrag:
 		if Swipe.get_swipe_direction(event.relative, 5) == Vector2.UP:
 			swipe_down = true
@@ -248,7 +247,6 @@ func _on_BG_body_entered(body):
 		velocity.y = -velocity.y / 2
 	$"/root/Global".taking_damage = true
 	$"/root/Global".player_energy -= 10
-
 	$Collision.play()
 
 

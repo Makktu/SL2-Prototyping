@@ -2,6 +2,7 @@ extends Node2D
 
 func game_over():
 	get_tree().paused = true
+	$"/root/Global".taking_damage = false
 	$"/root/Global".enemies_gone()
 	$CanvasLayer.visible = true
 	

@@ -9,7 +9,7 @@
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.0352941, 0.482353, 0.956863, 1 )
+self_modulate = Color( 0.141176, 0.407843, 0.0313726, 1 )
 position = Vector2( 1562, 752 )
 texture = ExtResource( 2 )
 
@@ -31,6 +31,18 @@ position = Vector2( -316, -889 )
 
 [node name="EnergyPickup" parent="." instance=ExtResource( 4 )]
 position = Vector2( 202, 755 )
+scale = Vector2( 1.1, 1.1 )
+
+[node name="EnergyPickup2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1235, 677 )
+scale = Vector2( 1.1, 1.1 )
+
+[node name="EnergyPickup3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1602, 895 )
+scale = Vector2( 1.1, 1.1 )
+
+[node name="EnergyPickup4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -410, 532 )
 scale = Vector2( 1.1, 1.1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Environment_3_body_entered"]
