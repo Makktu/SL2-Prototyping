@@ -8,7 +8,7 @@ var taking_damage = false
 
 ### starting environment setup ###
 var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_4.tscn"]
-var current_environment = 3
+var current_environment = 2
 ##################################
 
 onready var the_player = "res://Scenes/Player.tscn"
@@ -54,6 +54,9 @@ func _physics_process(delta):
 	if enemies_chasing_player == 0 && enemies_active:
 		enemies_gone()
 	if player_energy <= 0:
+		pulser_fired = false
+		enemies_chasing_player = 0
+		enemies_active = false
 		player_energy = starting_energy
 		$GameOver.game_over()
 		

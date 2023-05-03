@@ -59,6 +59,7 @@ func _physics_process(delta):
 	
 	if $"/root/Global".taking_damage:
 		$EnergyBar.value = $"/root/Global".player_energy
+		$"/root/Global".taking_damage = false
 	
 func get_input():
 	if game_over:
