@@ -6,6 +6,8 @@ var amount_spawned = 0
 
 
 func _on_Area2D_body_entered(body):
+	if !$"/root/Global".enemies_on:
+		return
 	if already_triggered == true:
 		return
 	$"/root/Global".under_threat()

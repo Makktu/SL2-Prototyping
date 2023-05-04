@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Graphics/VertEnv_1.png" type="Texture" id=1]
+
+[node name="Environment_5" type="Node2D"]
+position = Vector2( -262, -197 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.0470588, 0.219608, 0.0235294, 1 )
+position = Vector2( 477, 5022 )
+texture = ExtResource( 1 )

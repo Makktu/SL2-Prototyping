@@ -7,9 +7,11 @@ var transition_type = 1
 var taking_damage = false
 
 var game_paused = false
+var level_changed = false
+var enemies_on = false
 
 ### starting environment setup ###
-var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_4.tscn"]
+var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_5.tscn"]
 var current_environment = 2
 ##################################
 
@@ -31,6 +33,11 @@ var game_over = false
 
 func _ready():
 	print(platform)
+	
+func change_level():
+#	current_environment = next
+	pass
+	
 
 
 func get_player():
