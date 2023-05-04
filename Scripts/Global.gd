@@ -8,7 +8,7 @@ var taking_damage = false
 
 var game_paused = false
 var level_changed = false
-var enemies_on = false
+var enemies_on = true
 
 ### starting environment setup ###
 var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_5.tscn"]
