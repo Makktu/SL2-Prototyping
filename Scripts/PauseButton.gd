@@ -6,11 +6,13 @@ func _on_PauseButton_pressed():
 		$"/root/Global".game_paused = true
 		$EnemiesToggle.visible = true
 		$FrameRate.visible = true
+		$MusicToggle.visible = true
 	else:
 		get_tree().paused = false
 		$"/root/Global".game_paused = false
 		$EnemiesToggle.visible = false
 		$FrameRate.visible = false
+		$MusicToggle.visible = false
 
 
 func _on_EnemiesToggle_pressed():
@@ -30,3 +32,12 @@ func _on_FrameRate_pressed() -> void:
 		$FrameRate.text = "frame_rate_ON"
 		$"/root/Global".show_framerate = true
 		
+
+func _on_MusicToggle_pressed():
+	if $"/root/Global".music_toggle:
+		$MusicToggle.text = "music_OFF"
+		$"/root/Global".music_toggle = false
+	else:
+		$MusicToggle.text = "music_ON"
+		$"/root/Global".music_toggle = true
+	

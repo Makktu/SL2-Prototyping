@@ -62,7 +62,13 @@ func _physics_process(delta):
 		$"/root/Global".taking_damage = false
 		
 	if $"/root/Global".player_energizing:
-		show_energizing()
+		$Sprite/EnergizeAnimation.play("energize")
+		
+	if $"/root/Global".player_energizing_has_stopped:
+		$"/root/Global".player_energizing = false
+		$Sprite/EnergizeAnimation.stop()
+		$"/root/Global".player_energizing_has_stopped = false
+		
 	
 func get_input():
 	if game_over:
@@ -264,7 +270,4 @@ func _on_SwipeScreenButton_double_tap():
 
 func _on_CooldownTimer_timeout():
 	$"/root/Global".pulser_fired = false
-	
 
-func show_energizing():
-	$Sprite/EnergizeAnimation.play("energize")

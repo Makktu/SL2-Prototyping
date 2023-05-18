@@ -12,10 +12,13 @@ var enemies_on = true
 var show_framerate = true
 
 var player_energizing = false
+var player_energizing_has_stopped = true
+
+var music_toggle = false
 
 ### starting environment setup ###
 var environments = ["res://Scenes/Environment_0.tscn", "res://Scenes/Environment_1.tscn", "res://Scenes/Environment_3.tscn", "res://Scenes/Environment_5.tscn"]
-var current_environment = 2
+var current_environment = 3
 ##################################
 
 onready var the_player = "res://Scenes/Player.tscn"
@@ -71,6 +74,7 @@ func _physics_process(delta):
 		enemies_active = false
 		player_energy = starting_energy
 		$GameOver.game_over()
+
 		
 		
 func enemies_gone():
